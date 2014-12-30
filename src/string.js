@@ -18,12 +18,12 @@
   'use strict';
 
 
-  function fill(input, width, fillWith, filler) {
+  function pad(input, width, padWith, pader) {
     var output = '' + input;
-    fillWith = ('' + fillWith) || ' ';
+    padWith = ('' + padWith) || ' ';
 
     while (output.length < width) {
-      output = filler(output, fillWith);
+      output = pader(output, padWith);
     }
 
     return output;
@@ -51,26 +51,26 @@
     },
 
     /**
-     * fill the left hand side of the string with a character until its length
+     * pad the left hand side of the string with a character until its length
      * is length.
      *
-     * @method fillLeft
+     * @method padLeft
      */
-    fillLeft: function (input, width, fillWith) {
-      return fill(input, width, fillWith, function (output, fillWith) {
-        return fillWith + output;
+    padLeft: function (input, width, padWith) {
+      return pad(input, width, padWith, function (output, padWith) {
+        return padWith + output;
       });
     },
 
     /**
-     * fill the left hand side of the string with a character until its length
+     * pad the left hand side of the string with a character until its length
      * is length.
      *
-     * @method fillLeft
+     * @method padLeft
      */
-    fillRight: function (input, width, fillWith) {
-      return fill(input, width, fillWith, function (output, fillWith) {
-        return output + fillWith;
+    padRight: function (input, width, padWith) {
+      return pad(input, width, padWith, function (output, padWith) {
+        return output + padWith;
       });
     }
   };

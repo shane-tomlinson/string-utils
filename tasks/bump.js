@@ -7,7 +7,10 @@ module.exports = function (grunt) {
 
   grunt.config('bump', {
     options: {
-      push: false
+      push: false,
+      createTag: false,
+      commitFiles: ['-a'],
+      commitMessage: 'Start of release %VERSION%'
     }
   });
 };

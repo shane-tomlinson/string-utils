@@ -21,6 +21,30 @@ describe('string-utils', function () {
       assert.equal(output, 'put this on the end');
     });
   });
+
+  describe('padLeft', function () {
+    it('pads to the left until min-length is achieved', function () {
+      var output = StringUtils.padLeft('7', 2, '0');
+      assert.equal(output, '07');
+    })
+
+    it('does nothing if the min-length is already achieved', function () {
+      var output = StringUtils.padLeft('007', 2, '0');
+      assert.equal(output, '007');
+    });
+  });
+
+  describe('padRight', function () {
+    it('pads to the left until min-length is achieved', function () {
+      var output = StringUtils.padRight('7', 2, '0');
+      assert.equal(output, '70');
+    })
+
+    it('does nothing if the min-length is already achieved', function () {
+      var output = StringUtils.padRight('700', 2, '0');
+      assert.equal(output, '700');
+    });
+  });
 });
 
 
