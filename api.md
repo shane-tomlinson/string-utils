@@ -16,14 +16,14 @@ Version: 0.0.0
 
 format the string.
 
-## fillLeft()
+## padLeft()
 
-fill the left hand side of the string with a character until its length
+pad the left hand side of the string with a character until its length
 is length.
 
-## fillLeft()
+## padLeft()
 
-fill the left hand side of the string with a character until its length
+pad the left hand side of the string with a character until its length
 is length.
 
 <!-- End src/string.js -->
