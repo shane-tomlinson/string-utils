@@ -10,7 +10,20 @@
 
 // jscs: disable
 // jshint ignore:start
-;(function (define){define(function (require,exports,module){
+(function (root, factory) {
+  if (typeof define === 'function' && define.amd) {
+    // AMD. Register as an anonymous module.
+    define([], factory);
+  } else if (typeof exports === 'object') {
+    // Node. Does not work with strict CommonJS, but
+    // only CommonJS-like environments that support module.exports,
+    // like Node.
+    module.exports = factory();
+  } else {
+    // Browser globals (root is window)
+    root.StringUtils = factory();
+  }
+}(this, function () {
 // jshint ignore:end
 // jscs: enable
 
@@ -30,7 +43,7 @@
   }
 
 
-  module.exports = {
+  return {
     /**
      * format the string.
      *
@@ -77,10 +90,7 @@
 
 // jscs: disable
 // jshint ignore:start
-});})(typeof define=='function'&&define.amd?define
-:(function (n,w){'use strict';return typeof module=='object'?function (c){
-c(require,exports,module);}:function (c){var m={exports:{}};c(function (n){
-return w[n];},m.exports,m);w[n]=m.exports;};})('StringUtils',this));
+}));
 // jshint ignore:end
 // jscs: enable
 
